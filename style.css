@@ -185,11 +185,14 @@ button:hover {
   background: var(--accent);;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
+
+  position: -webkit-sticky;  /* <----- required (for WebKit) */
+  position: sticky;  /* <------------- required              */
   bottom: 0;
 }
 
 .content a {
-  margin: 10px;
+  
   font-size: 50px;
 }
 
@@ -238,8 +241,15 @@ button:hover {
     transition: 0.3s;
   }
 
-  .content {
+  .content a {
+    width: 50%;
     font-size: 80%;
+  }
+}
+
+@media screen and (max-width:395px){
+  .content a {
+    font-size: 8px;
   }
 }
 
